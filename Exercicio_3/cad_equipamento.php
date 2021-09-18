@@ -3,18 +3,17 @@
     include("DB.php");
 
     //Recuperação de dados
-    $nome = $_POST["txt_nome"];
-    $email = $_POST["txt_email"];
-    $endereco = $_POST["txt_endereco"];
-    $celular = $_POST["txt_celular"];
+    $equipamento = $_POST["txt_equipamento"];
+    $modelo = $_POST["txt_modelo"];
+    $marca = $_POST["txt_marca"];
 
     //String SQL
-    $sql="INSERT into funcionarios(nome, email, endereco, celular) VALUES('$nome', '$email', '$endereco', '$celular')";
+    $sql="INSERT into luiz_dornelas(equipamento, modelo, marca) VALUES('$equipamento', '$modelo', '$marca')";
     
     if(mysqli_query($conexao, $sql))
     {
         echo "Funcionário cadastrado com sucesso!";
-        header("Location: lista_func.php");
+        header("Location: index.php");
     }
     else
     {

@@ -1,13 +1,13 @@
 <?php
     include "DB.php";
     //Recupera ID
-    $id_funcionarios = $_GET["id"];
+    $id_equipamento = $_GET["id"];
 
     //Consulta dados por ID
-    $consulta_por_id = "DELETE FROM funcionarios WHERE id = '$id_funcionarios'";
+    $consulta_id = "DELETE FROM luiz_dornelas WHERE id = '$id_equipamento'";
 
     //Executa a querry
-    $result = mysqli_query($conexao, $consulta_por_id);
+    $result = mysqli_query($conexao, $consulta_id);
 
     //Retornar array com os dados
     $lines = mysqli_affected_rows($conexao);
@@ -15,7 +15,7 @@
     if ($lines == 1)
     {
         //redirecionar para lista de clientes
-        header("location: lista_func.php");
+        header("location: index.php");
     }
     else
     {
